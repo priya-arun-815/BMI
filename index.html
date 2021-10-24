@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <style>
+            body
+            {
+                background-image: url(https://images.everydayhealth.com/images/diet-nutrition/what-is-the-flexitarian-diet-722x406.jpg?w=1110); 
+                background-size: cover;
+                text-align: center;
+            }
+            .box
+            {
+                background-color: rgb(227, 252, 252);
+                width: 50%;
+                border: 5px groove rgb(14, 10, 1);
+                padding: 30px;
+                height: fit-content;
+                float: center;
+            }
+        </style>
+        <title>BMI Calculator using AJS Components</title>
+    </head>
+    <body >
+        <br><br><br>
+        <center><div class="box">
+            <div ng-app="myApp">
+                <hello></hello>
+            </div>
+       </div></center>
+        <script>
+            angular.module("myApp", [])
+                .component("hello",{
+                    template: `<center><h1>BMI Calculator</h1></center>
+                                <br><br><br>
+                                Height(in cms)<input type="number" ng-model="ht">
+                                <br> <br>
+                                <p> Height in metres : {{ht/10}}</p>
+                                <br><br>
+                                Weight(in kgs)<input type="number" ng-model="wt">
+                                <br> <br>
+                                <p>BMI:{{(wt/(ht*ht))*10000}}</p> `
+                });
+        </script>
+    </body>
+   
+</html>
